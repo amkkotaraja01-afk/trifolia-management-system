@@ -1,0 +1,38 @@
+services:
+  - type: web
+    name: trifolia-management-system
+    runtime: node
+    plan: starter
+    buildCommand: npm install --no-audit --no-fund && npm run build
+    startCommand: npm start
+    healthCheckPath: /api/health
+    autoDeployTrigger: commit
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: STORAGE_MODE
+        value: mysql
+      - key: TRUST_PROXY
+        value: "1"
+      - key: DB_HOST
+        sync: false
+      - key: DB_PORT
+        value: "3306"
+      - key: DB_USER
+        sync: false
+      - key: DB_PASSWORD
+        sync: false
+      - key: DB_NAME
+        value: trifolia_management
+      - key: DB_CREATE_DATABASE
+        value: "false"
+      - key: DB_POOL_SIZE
+        value: "5"
+      - key: DB_SSL
+        sync: false
+      - key: DB_SSL_REJECT_UNAUTHORIZED
+        value: "true"
+      - key: BOOTSTRAP_ADMIN_USER
+        sync: false
+      - key: BOOTSTRAP_ADMIN_PASSWORD
+        sync: false

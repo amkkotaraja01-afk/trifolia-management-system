@@ -1,0 +1,28 @@
+{
+  "name": "trifolia-management-system",
+  "private": true,
+  "version": "10.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "node start-dev.mjs",
+    "build": "vite build",
+    "preview": "vite preview",
+    "server": "node server.js",
+    "start": "node server.js",
+    "check:server": "node --check server.js && node --check scripts/reset-user-password.mjs"
+  },
+  "dependencies": {
+    "react": "18.3.1",
+    "react-dom": "18.3.1",
+    "express": "4.22.2",
+    "mysql2": "3.24.4"
+  },
+  "devDependencies": {
+    "vite": "7.3.6",
+    "@vitejs/plugin-react": "5.2.0"
+  },
+  "engines": {
+    "node": ">=20.19.0"
+  },
+  "description": "Trifolia 1 Management System - V10 integrated financial, visitor and maintenance build"
+}
